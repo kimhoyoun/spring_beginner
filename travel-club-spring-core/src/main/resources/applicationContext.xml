@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context" xsi:schemaLocation="
+        http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+
+
+    <!--  bean 등록 -->
+    <!-- bean id를 임의로 지정, bean으로 등록할 class의 full package를 입력한다.   -->
+<!--    <bean id ="clubStore" class = "io.namoosori.travelclub.spring.store.mapstore.ClubMapStore"/>-->
+
+<!--    <bean id ="clubService" class="io.namoosori.travelclub.spring.service.logic.ClubServiceLogic">-->
+        <!-- clubService를 bean으로 등록하면서
+         constructor-arg(생성자의 파라미터)에 clubStore의 id를 갖는 bean을 등록하겠다.  -->
+<!--        <constructor-arg ref="clubStore"/>-->
+<!--    </bean>-->
+
+
+<!--  단점 : bean으로 등록할 class가 많아지면 힘들다. 해당 방식은 spring 2.x.x에서 사용하는 방식임.  -->
+<!--  보완 : @Bean 이라는 어노테이션을 사용하여 등록.  -->
+
+<!--  base-package가 되는 지점 부터 하위로 내려가면서 bean을 찾으라는 의미  -->
+    <context:component-scan base-package="io.namoosori.travelclub.spring"/>
+
+</beans>
+
+
+
+
+
+
+
