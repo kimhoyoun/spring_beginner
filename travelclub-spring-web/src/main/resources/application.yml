@@ -1,2 +1,28 @@
 server:
   port: 8090
+
+# jpa 사용을 위한 setting
+spring:
+  # h2 database를 사용하고 path로 설정한 곳에서 console로 확인
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+
+  # h2 Database를 사용하기 위한 Driver 설정 및 database url, username, password 설정 값
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:mem:test
+    username: sa
+    password:
+
+  # jpa를 사용하기 위한 설정
+    # database-platform : database 에 따라 쿼리가 다르기 때문에 쿼리를 만들 때 어떤 database 기준으로 하는지에 대한 설정
+    # show_sql : table 이 만들어질 때 sql 구문을 보여줌 (console 창에 나타남)
+    # properties 이하 : sql 쿼리를 볼 때 좀 더 정돈된 모습으로 보이기
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    show_sql: true
+    properties:
+      hibernate:
+        format-sql: true

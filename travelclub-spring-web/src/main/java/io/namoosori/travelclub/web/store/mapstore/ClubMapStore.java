@@ -10,7 +10,9 @@ import java.util.Map;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
-@Repository
+// jpa를 사용하기 위해 Repository 주석처리
+// spring bean으로 등록되지 않도록함.
+//@Repository
 public class ClubMapStore implements ClubStore {
 	//
 	private Map<String, TravelClub> clubMap;
